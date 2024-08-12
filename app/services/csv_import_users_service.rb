@@ -3,7 +3,7 @@ class CsvImportUsersService
 
   def call(file)
     file = File.open(file)
-    csv = CSV.parse(file, headers: true, col_sep: ';')
+    csv = CSV.parse(file, headers: true, col_sep: ',')
     csv.each do |row|
       user_hash = {}
       user_hash[:name] = row['First Name']
